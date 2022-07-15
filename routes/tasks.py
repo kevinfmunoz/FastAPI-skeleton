@@ -63,7 +63,7 @@ def delete_task(id_user: str, id: str):
     # Check if task exists
     if task.__len__() > 0:
         # Search for task in database
-        task_find = next((i for i, task in enumerate(task) if task['id_user'] == /{id_user} and task["id"] == id and task['deleted'] == False), None)
+        task_find = next((i for i, task in enumerate(task) if task['id_user'] == {id_user} and task["id"] == id and task['deleted'] == False), None)
         if task_find != None:
             task[task_find].deleted = not task[task_find].deleted
             return task[task_find]
